@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFrameworks>net45;net5.0-windows;net6.0-windows</TargetFrameworks>
+		<DocumentationFile>..\..\bin\net5.0-windows\ICSharpCode.WpfDesign.xml</DocumentationFile>
+		<OutputPath>..\..\bin\</OutputPath>
+	<UseWPF>true</UseWPF>
+	<AssemblyName>ICSharpCode.WpfDesign</AssemblyName>
+	<RootNamespace>ICSharpCode.WpfDesign</RootNamespace>
+	<Version>8.1</Version>
+	<AssemblyVersion>8.1.0.0</AssemblyVersion>
+	<FileVersion>8.1.0.0</FileVersion>
+	<Company>ic#code</Company>
+	<Copyright>2000-2021 AlphaSierraPapa for the SharpDevelop Team</Copyright>
+  </PropertyGroup>
+</Project>

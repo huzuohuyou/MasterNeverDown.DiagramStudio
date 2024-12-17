@@ -1,0 +1,32 @@
+  branches:
+    only:
+      - master
+
+  version: 8.0.{build}
+  
+  image: Visual Studio 2019
+  
+  configuration: Release
+ 
+  assembly_info:
+    patch: true
+    file: GlobalAssemblyInfo.*
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
+
+  before_build:
+    - nuget restore
+
+  build:
+    project: WpfDesign.sln
+
+  after_build:
+    - ps: .\nuget\pack.ps1
+
+  test_script:
+    - cmd: nunit3-console WpfDesign.Designer\Tests\bin\Release\net45\ICSharpCode.WpfDesign.Tests.dll --framework:net-4.5 --result=myresults.xml;format=AppVeyor
+
+  artifacts:
+    - path: 'ICSharpCode.WpfDesigner.*.nupkg'
+      name: NuGet

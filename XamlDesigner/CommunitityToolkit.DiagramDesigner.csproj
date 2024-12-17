@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+	<UseWPF>true</UseWPF>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<ApplicationIcon />
+	<StartupObject />
+	<AssemblyName>CommunityToolkit.DiagramDesigner</AssemblyName>
+	<RootNamespace>CommunityToolkit.DiagramDesigner</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="NewFileTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AakStudio.Shell.UI.Themes.AvalonDock" Version="4.72.0" />
+    <PackageReference Include="AvalonEdit" Version="6.1.3.50" />
+    <PackageReference Include="Dirkster.AvalonDock" Version="4.72.1" />	
+    <PackageReference Include="Dirkster.AvalonDock.Themes.VS2013" Version="4.72.1" />	
+    <PackageReference Include="StackExchange.Redis" Version="2.8.0" />	
+	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AakStudio.Shell.UI\AakStudio.Shell.UI.csproj" />
+    <ProjectReference Include="..\WpfDesign.Design.ExpressionBlendInteractionAddon\WpfDesign.Designer.ExpressionBlendInteractionAddon.csproj" />
+    <ProjectReference Include="..\WpfDesign.Designer\Project\WpfDesign.Designer.csproj" />
+    <ProjectReference Include="..\WpfDesign.XamlDom\Project\WpfDesign.XamlDom.csproj" />
+    <ProjectReference Include="..\WpfDesign\Project\WpfDesign.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Error.png" />
+    <Resource Include="Images\Reference.png" />
+    <Resource Include="Images\Tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Remove="TestFiles\3.xaml" />
+    <Page Remove="TestFiles\4.xaml" />
+  </ItemGroup>
+</Project>
+      
